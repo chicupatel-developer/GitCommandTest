@@ -1,0 +1,85 @@
+[[ 
+	how to make equal your remote github branch branch2 to your local git 	
+
+branch branch2,,,
+	remote branch2 == local branch2
+]]
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git branch
+WARNING: terminal is not fully functional
+Press RETURN to continue
+  branch2
+* main
+----you are on main branch now
+
+
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git checkout branch2
+Switched to branch 'branch2'
+Your branch is behind 'origin/main' by 5 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+----you are now on branch branch2
+----make some changes on branch2
+----and do as following, while you stay on branch2
+
+
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git add .
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git commit -m "edit-4-branch2"
+[branch2 eb32bb7] edit-4-branch2
+ 1 file changed, 3 insertions(+)
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git push origin head
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 156.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Ankithorizon/GitCommandTest.git
+   f585ef4..eb32bb7  head -> branch2
+----after this, your remote github branch2 be equal to your local git branch2 
+
+
+----------------------------------END-----------------------------
+
+[[ 
+	how to accept changes from local branch branch2 to remote main branch,,,
+	remote main branch == [branch1,branch3,,,] + local(remote) branch2,,,
+	by this time, local branch2 == remote branch2,,,
+	as we did already above 	
+]]
+
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git merge branch2
+Auto-merging index.html
+Merge made by the 'recursive' strategy.
+ index.html | 3 +++
+ 1 file changed, 3 insertions(+)
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+ git push -u origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 338 bytes | 169.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Ankithorizon/GitCommandTest.git
+   f8b67fc..95ecb5a  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+PS C:\Users\ankit_2\Desktop\Interview\Git\GitCommandTest>
+
+----after this, your remote github main branch has changes from local git branch  
+
+branch2
+
+----------------------------------END-----------------------------
+
+
